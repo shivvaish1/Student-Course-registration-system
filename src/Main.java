@@ -5,11 +5,9 @@ public class Main {
         CourseDatabase courseDatabase = new CourseDatabase();
         StudentDatabase studentDatabase = new StudentDatabase();
 
-        // Sample courses
         courseDatabase.addCourse(new Course("CS101", "Intro to Computer Science", "Basic concepts of computer science", 30, "Mon 10-12"));
         courseDatabase.addCourse(new Course("CS102", "Data Structures", "Introduction to data structures", 25, "Wed 14-16"));
 
-        // Sample students
         studentDatabase.addStudent(new Student("S001", "Alice"));
         studentDatabase.addStudent(new Student("S002", "Bob"));
 
@@ -24,6 +22,7 @@ public class Main {
             System.out.println("7. Exit");
             System.out.println("Enter your choice: ");
             int choice = scanner.nextInt();
+
 
             switch (choice) {
                 case 1:
@@ -74,12 +73,12 @@ public class Main {
                 case 4:
                     studentDatabase.displayStudents();
                     break;
-                case 5:
-                    // String ourseName = scanner.nextLine();
+                case 5 :
+                    scanner.nextLine();
                     System.out.println("Enter Course Name: ");
-                    String courseName = scanner.next();
+                    String courseName = scanner.nextLine();
                     System.out.println("Enter Course ID: ");
-                    String newCourseId = scanner.nextLine().trim();
+                    String newCourseId = scanner.nextLine();
                     System.out.println("Enter Course Description: ");
                     String courseDescription = scanner.nextLine();
                     System.out.println("Enter Course Capacity: ");
@@ -90,7 +89,7 @@ public class Main {
                     courseDatabase.addCourse(new Course(newCourseId, courseName, courseDescription, courseCapacity, courseSchedule));
                     break;
                 case 6:
-                    //String ewStudentId = scanner.nextLine();
+                    scanner.nextLine();
                     System.out.println("Enter Student ID: ");
                     String newStudentId = scanner.nextLine();
                     System.out.println("Enter Student Name: ");
