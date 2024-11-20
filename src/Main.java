@@ -8,8 +8,8 @@ public class Main {
         courseDatabase.addCourse(new Course("CS101", "Intro to Computer Science", "Basic concepts of computer science", 30, "Mon 10-12"));
         courseDatabase.addCourse(new Course("CS102", "Data Structures", "Introduction to data structures", 25, "Wed 14-16"));
 
-        studentDatabase.addStudent(new Student("S001", "Alice"));
-        studentDatabase.addStudent(new Student("S002", "Bob"));
+        studentDatabase.addStudent(new Student("S001", "Tushar"));
+        studentDatabase.addStudent(new Student("S002", "Shubham"));
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -17,8 +17,8 @@ public class Main {
             System.out.println("2. Register for a Course");
             System.out.println("3. Drop a Course");
             System.out.println("4. Display students");
-            System.out.println("5. Add a Course");
-            System.out.println("6. Add a Student");
+            System.out.println("5. Add a Student");
+            System.out.println("6. Add a course");
             System.out.println("7. Exit");
             System.out.println("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -73,12 +73,20 @@ public class Main {
                 case 4:
                     studentDatabase.displayStudents();
                     break;
-                case 5 :
+                case 5:
                     scanner.nextLine();
-                    System.out.println("Enter Course Name: ");
-                    String courseName = scanner.nextLine();
+                    System.out.println("Enter Student ID: ");
+                    String newStudentId = scanner.nextLine();
+                    System.out.println("Enter Student Name: ");
+                    String studentName = scanner.nextLine();
+                    studentDatabase.addStudent(new Student(newStudentId, studentName));
+                    break;
+                case 6 :
+                    scanner.nextLine();
                     System.out.println("Enter Course ID: ");
                     String newCourseId = scanner.nextLine();
+                    System.out.println("Enter Course Name: ");
+                    String courseName = scanner.nextLine();
                     System.out.println("Enter Course Description: ");
                     String courseDescription = scanner.nextLine();
                     System.out.println("Enter Course Capacity: ");
@@ -88,14 +96,7 @@ public class Main {
                     String courseSchedule = scanner.nextLine();
                     courseDatabase.addCourse(new Course(newCourseId, courseName, courseDescription, courseCapacity, courseSchedule));
                     break;
-                case 6:
-                    scanner.nextLine();
-                    System.out.println("Enter Student ID: ");
-                    String newStudentId = scanner.nextLine();
-                    System.out.println("Enter Student Name: ");
-                    String studentName = scanner.nextLine();
-                    studentDatabase.addStudent(new Student(newStudentId, studentName));
-                    break;
+                
                 case 7:
                     System.out.println("Exiting...");
                     scanner.close();
